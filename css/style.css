@@ -7,8 +7,8 @@
 :root {
   font-size: 62.5%;
 
-  --main: #2563eb;
-  --alt: #60a5fa;
+  --main: #2563eb; /* 600 */
+  --alt: #60a5fa; /* 400 */
   --bg: #0c0a09;
   --text: #d4d4d4;
   --text-alt: #18181b;
@@ -80,7 +80,6 @@ a:visited {
   text-decoration: none;
 
   position: relative;
-  z-index: 99;
 }
 
 a:link::after,
@@ -89,7 +88,6 @@ a:visited::after {
   position: absolute;
   left: 0;
   bottom: 0px;
-  z-index: -1;
   width: 0;
   height: 2px;
   background-color: var(--alt);
@@ -119,5 +117,13 @@ a:visited:hover::after {
 @media (max-width: 445px) {
   section {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  li {
+    font-size: 1.6rem;
   }
 }
