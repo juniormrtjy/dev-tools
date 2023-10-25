@@ -20,13 +20,81 @@ body {
   color: var(--text-alt);
 }
 
-h1 {
+header {
   background: var(--main);
+}
+
+h1 {
   color: #fff;
   text-align: center;
   padding: 2rem;
   margin-bottom: 2rem;
   font-size: 4.4rem;
+}
+
+nav {
+  display: none;
+}
+
+h3 {
+  color: #fff;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+  padding: 2rem 1rem;
+
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 100%;
+  background: var(--main);
+  transition: 0.3s;
+}
+
+.menu.show {
+  top: auto;
+  bottom: 0;
+}
+
+.btn-menu {
+  position: absolute;
+  top: -3.62rem;
+  right: 2rem;
+  background: var(--alt);
+  cursor: pointer;
+
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.btn-menu ion-icon {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.menu li {
+  margin-bottom: 0;
+}
+
+.menu li a {
+  display: inline-flex;
+  background: #fff;
+  color: var(--main);
+  padding: 1rem;
+  border-radius: 3rem;
+  border: 0.2rem solid #fff;
+
+  transition: background 0.2s;
+}
+
+.menu li a:hover {
+  background: var(--main);
+  color: #fff;
 }
 
 section {
@@ -82,8 +150,8 @@ a:visited {
   position: relative;
 }
 
-a:link::after,
-a:visited::after {
+.link:link::after,
+.link:visited::after {
   content: '';
   position: absolute;
   left: 0;
@@ -94,14 +162,27 @@ a:visited::after {
   transition: width 0.3s;
 }
 
-a:link:hover,
-a:visited:hover {
+.link:link:hover,
+.link:visited:hover,
+footer ion-icon:hover {
   color: var(--alt);
 }
 
-a:link:hover::after,
-a:visited:hover::after {
+.link:link:hover::after,
+.link:visited:hover::after {
   width: 100%;
+}
+
+footer {
+  padding: 2rem;
+  margin-top: 5rem;
+  background: var(--text-alt);
+  text-align: center;
+}
+
+footer ion-icon {
+  color: var(--text);
+  font-size: 3rem;
 }
 
 @media (max-width: 785px) {
