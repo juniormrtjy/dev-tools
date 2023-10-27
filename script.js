@@ -1,6 +1,9 @@
-const showMenu = document.querySelector('.btn-menu')
-const menu = document.querySelector('.menu')
+const moveUp = document.querySelector('.move-up')
 
-showMenu.addEventListener('click', () => {
-  menu.classList.toggle('show')
+document.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    moveUp.style.opacity = '1'
+  } else {
+    moveUp.style.opacity = '0'
+  }
 })

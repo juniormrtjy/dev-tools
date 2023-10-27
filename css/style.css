@@ -14,6 +14,12 @@
   --text-alt: #18181b;
 }
 
+html {
+  scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.6rem;
@@ -33,48 +39,17 @@ h1 {
 }
 
 nav {
-  display: none;
-}
-
-h3 {
-  color: #fff;
+  /* display: none; */
 }
 
 .menu {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 
   gap: 1rem;
   padding: 2rem 1rem;
-
-  width: 100%;
-  position: fixed;
-  z-index: 99;
-  top: 100%;
-  background: var(--main);
-  transition: 0.3s;
-}
-
-.menu.show {
-  top: auto;
-  bottom: 0;
-}
-
-.btn-menu {
-  position: absolute;
-  top: -3.62rem;
-  right: 2rem;
-  background: var(--alt);
-  cursor: pointer;
-
-  border-top-right-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
-}
-
-.btn-menu ion-icon {
-  color: #fff;
-  font-size: 3rem;
 }
 
 .menu li {
@@ -86,7 +61,7 @@ h3 {
   background: #fff;
   color: var(--main);
   padding: 1rem;
-  border-radius: 3rem;
+  border-radius: 0.5rem;
   border: 0.2rem solid #fff;
 
   transition: background 0.2s;
@@ -164,13 +139,35 @@ a:visited {
 
 .link:link:hover,
 .link:visited:hover,
-footer ion-icon:hover {
+ion-icon:hover {
   color: var(--alt);
 }
 
 .link:link:hover::after,
 .link:visited:hover::after {
   width: 100%;
+}
+
+.move-up {
+  max-width: fit-content;
+
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+
+  cursor: pointer;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.move-up a {
+  border-radius: 0.5rem;
+  background: var(--text-alt);
+  display: flex;
+  padding: 1rem;
+  color: var(--text);
+  font-size: 3rem;
 }
 
 footer {
@@ -206,5 +203,10 @@ footer ion-icon {
 
   li {
     font-size: 1.6rem;
+  }
+
+  .move-up a {
+    font-size: 2rem;
+    padding: 0.5rem;
   }
 }
